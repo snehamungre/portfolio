@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #fdf6f0;
+  --color-bg-alt: #f5ebe0;
+  --color-tan: #c4a882;
+  --color-pink: #f4c2c2;
+  --color-pink-light: #fde8e8;
+  --color-yellow: #f5e6a3;
+  --color-accent: #e8a598;
+  --color-accent-dark: #c9786a;
+  --color-text: #3d2c29;
+  --color-text-muted: #6b534e;
+  --font-heading: "Amarante", serif;
+  --font-nav: "Edu VIC WA NT Hand", cursive;
+  --font-body: "Cantarell", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}

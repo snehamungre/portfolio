@@ -1,0 +1,51 @@
+# Project: Portfolio Website
+# Stack: React 19 + TypeScript 5 + Vite + Tailwind CSS 4
+
+You are working on a personal portfolio site with four pages: Home, About,
+Projects, Education. Follow these rules on every generation and edit.
+
+## Code Style
+- TypeScript strict mode. Never use `any`. Prefer explicit interfaces/types
+  over inferred `object` shapes for props and data.
+- Functional components only. No class components.
+- Named exports only. No default exports.
+- Tailwind CSS for all styling. No inline styles, no CSS modules, no
+  styled-components.
+- No TODO comments left in committed code — finish the task or flag it in
+  chat, don't stub it silently.
+
+## Architecture
+- Components live in `src/components/<FeatureName>/`, one component per
+  file, e.g. `src/components/Projects/ProjectCard.tsx`.
+- Shared/cross-page pieces (Nav, Footer, Layout, ContactStrip) live in
+  `src/components/Layout/` and `src/components/Contact/`.
+- Static content data (projects, education) lives in `src/data/` as typed
+  TypeScript files, not hardcoded inline in components.
+- All shared types live in `src/types/index.ts`. Don't redeclare a type
+  locally if an equivalent already exists there — import it.
+- Routing via React Router; route definitions live in `src/App.tsx` (or
+  `src/routes.tsx` if the router config grows).
+
+## Components
+- Every component takes a typed `props` interface named `<ComponentName>Props`,
+  defined directly above the component in the same file.
+- Keep components single-responsibility: a component that renders a list
+  maps over data and delegates each item to a smaller child component
+  (e.g. `ProjectGrid` maps to `ProjectCard`, not inline JSX per item).
+- Responsive by default: mobile-first Tailwind classes, with `md:`/`lg:`
+  breakpoints added explicitly, not assumed.
+- External links (GitHub, LinkedIn, etc.) always use
+  `target="_blank" rel="noopener noreferrer"`.
+
+## Data & Content
+- Never invent placeholder personal content (bio text, project
+  descriptions, credentials). If content is missing, leave the exact
+  field empty or flag it in chat — don't fabricate.
+- Project and education data are the single source of truth in
+  `src/data/`. Components read from there, never hardcode duplicate copy.
+
+## Before Finishing a Task
+- No unused imports, variables, or props.
+- No console.log left in committed code.
+- Confirm the component renders correctly at mobile, tablet, and desktop
+  widths before considering a task done.
